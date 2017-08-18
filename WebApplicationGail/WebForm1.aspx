@@ -17,16 +17,7 @@
         <asp:Label ID="Label1" runat="server" Text="Edad"></asp:Label>
         <asp:DropDownList ID="DropDownList2" runat="server" style="margin-left: 403px">
             <%--<asp:ListItem Value="Desconocido"></asp:ListItem>--%>
-            <asp:ListItem Value="25"></asp:ListItem>
-            <asp:ListItem Value="26"></asp:ListItem>
-            <asp:ListItem Value="27"></asp:ListItem>
-            <asp:ListItem Value="28"></asp:ListItem>
-            <asp:ListItem Value="29"></asp:ListItem>
-            <asp:ListItem Value="30"></asp:ListItem>
-            <asp:ListItem Value="31"></asp:ListItem>
-            <asp:ListItem Value="32"></asp:ListItem>
-            <asp:ListItem Value="33"></asp:ListItem>
-            <asp:ListItem Value="34"></asp:ListItem>
+
             <asp:ListItem Value="35"></asp:ListItem>
             <asp:ListItem Value="36"></asp:ListItem>
             <asp:ListItem Value="37"></asp:ListItem>
@@ -107,7 +98,7 @@
         <br />
         <br />
         <asp:Label ID="Label5" runat="server" Text="Cantidad de biopsias de mama"></asp:Label>            
-        <asp:DropDownList ID="DropDownList5" runat="server" style="margin-left: 238px">
+        <asp:DropDownList ID="DropDownList5" AutoPostBack="true" runat="server" style="margin-left: 238px" OnSelectedIndexChanged="DropDownList5_SelectedIndexChanged">
             <%--<asp:ListItem Value="Desconocido"></asp:ListItem>--%>
             <asp:ListItem Value="0"></asp:ListItem>
             <asp:ListItem Value="1"></asp:ListItem>
@@ -116,7 +107,7 @@
                 <br />
         <br />
         <asp:Label ID="Label6" runat="server" Text="Detección de hiperplasias atípicas"></asp:Label>            
-        <asp:DropDownList ID="DropDownList6" runat="server" style="margin-left: 215px">
+        <asp:DropDownList ID="DropDownList6" runat="server" style="margin-left: 215px" Enabled="False">
             <%--<asp:ListItem Value="Desconocido"></asp:ListItem>--%>
             <asp:ListItem Value="No"></asp:ListItem>
             <asp:ListItem Value="Sí"></asp:ListItem>

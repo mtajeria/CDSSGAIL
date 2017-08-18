@@ -69,9 +69,6 @@
     </None>
     <Content Include="Web.config" />
     <None Include="Service References\GailService\GailModel.wsdl" />
-    <Content Include="Service References\GailService\WebApplicationGail.GailService.ReadFormResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +86,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Service References\GailService\WebApplicationGail.GailService.CalculateRRResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -101,6 +101,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\GailService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebServiceGail\WebServiceGail.csproj">
+      <Project>{13cf70c7-4623-4d5f-a62e-85f946258eee}</Project>
+      <Name>WebServiceGail</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

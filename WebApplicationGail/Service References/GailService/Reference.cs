@@ -15,45 +15,33 @@ namespace WebApplicationGail.GailService {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://cdssgailmodel.com/webservice", ConfigurationName="GailService.GailModelSoap")]
     public interface GailModelSoap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/CalcPorb", ReplyAction="*")]
-        double CalcPorb(double RR, int agecat);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/CalcPorb", ReplyAction="*")]
-        System.Threading.Tasks.Task<double> CalcPorbAsync(double RR, int agecat);
+        [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/CalculateProbability", ReplyAction="*")]
+        double CalculateProbability(double a, double r1, double r2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/CalculateProbability", ReplyAction="*")]
-        double CalculateProbability(double a, double tau, double r1, double r2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/CalculateProbability", ReplyAction="*")]
-        System.Threading.Tasks.Task<double> CalculateProbabilityAsync(double a, double tau, double r1, double r2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/CalculateRelativeRisk", ReplyAction="*")]
-        double CalculateRelativeRisk(int agecat, int agemen, int ageflb, int nbiops, int numrel, int ah);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/CalculateRelativeRisk", ReplyAction="*")]
-        System.Threading.Tasks.Task<double> CalculateRelativeRiskAsync(int agecat, int agemen, int ageflb, int nbiops, int numrel, int ah);
+        System.Threading.Tasks.Task<double> CalculateProbabilityAsync(double a, double r1, double r2);
         
         // CODEGEN: Generating message contract since element name agecat from namespace http://cdssgailmodel.com/webservice is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/ReadForm", ReplyAction="*")]
-        WebApplicationGail.GailService.ReadFormResponse ReadForm(WebApplicationGail.GailService.ReadFormRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/CalculateRR", ReplyAction="*")]
+        WebApplicationGail.GailService.CalculateRRResponse CalculateRR(WebApplicationGail.GailService.CalculateRRRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/ReadForm", ReplyAction="*")]
-        System.Threading.Tasks.Task<WebApplicationGail.GailService.ReadFormResponse> ReadFormAsync(WebApplicationGail.GailService.ReadFormRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://cdssgailmodel.com/webservice/CalculateRR", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplicationGail.GailService.CalculateRRResponse> CalculateRRAsync(WebApplicationGail.GailService.CalculateRRRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ReadFormRequest {
+    public partial class CalculateRRRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ReadForm", Namespace="http://cdssgailmodel.com/webservice", Order=0)]
-        public WebApplicationGail.GailService.ReadFormRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CalculateRR", Namespace="http://cdssgailmodel.com/webservice", Order=0)]
+        public WebApplicationGail.GailService.CalculateRRRequestBody Body;
         
-        public ReadFormRequest() {
+        public CalculateRRRequest() {
         }
         
-        public ReadFormRequest(WebApplicationGail.GailService.ReadFormRequestBody Body) {
+        public CalculateRRRequest(WebApplicationGail.GailService.CalculateRRRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -62,7 +50,7 @@ namespace WebApplicationGail.GailService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://cdssgailmodel.com/webservice")]
-    public partial class ReadFormRequestBody {
+    public partial class CalculateRRRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string agecat;
@@ -82,10 +70,10 @@ namespace WebApplicationGail.GailService {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string ah;
         
-        public ReadFormRequestBody() {
+        public CalculateRRRequestBody() {
         }
         
-        public ReadFormRequestBody(string agecat, string agemen, string ageflb, string nbiops, string numrel, string ah) {
+        public CalculateRRRequestBody(string agecat, string agemen, string ageflb, string nbiops, string numrel, string ah) {
             this.agecat = agecat;
             this.agemen = agemen;
             this.ageflb = ageflb;
@@ -99,15 +87,15 @@ namespace WebApplicationGail.GailService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ReadFormResponse {
+    public partial class CalculateRRResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ReadFormResponse", Namespace="http://cdssgailmodel.com/webservice", Order=0)]
-        public WebApplicationGail.GailService.ReadFormResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CalculateRRResponse", Namespace="http://cdssgailmodel.com/webservice", Order=0)]
+        public WebApplicationGail.GailService.CalculateRRResponseBody Body;
         
-        public ReadFormResponse() {
+        public CalculateRRResponse() {
         }
         
-        public ReadFormResponse(WebApplicationGail.GailService.ReadFormResponseBody Body) {
+        public CalculateRRResponse(WebApplicationGail.GailService.CalculateRRResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -116,16 +104,16 @@ namespace WebApplicationGail.GailService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://cdssgailmodel.com/webservice")]
-    public partial class ReadFormResponseBody {
+    public partial class CalculateRRResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public double ReadFormResult;
+        public double CalculateRRResult;
         
-        public ReadFormResponseBody() {
+        public CalculateRRResponseBody() {
         }
         
-        public ReadFormResponseBody(double ReadFormResult) {
-            this.ReadFormResult = ReadFormResult;
+        public CalculateRRResponseBody(double CalculateRRResult) {
+            this.CalculateRRResult = CalculateRRResult;
         }
     }
     
@@ -156,63 +144,47 @@ namespace WebApplicationGail.GailService {
                 base(binding, remoteAddress) {
         }
         
-        public double CalcPorb(double RR, int agecat) {
-            return base.Channel.CalcPorb(RR, agecat);
+        public double CalculateProbability(double a, double r1, double r2) {
+            return base.Channel.CalculateProbability(a, r1, r2);
         }
         
-        public System.Threading.Tasks.Task<double> CalcPorbAsync(double RR, int agecat) {
-            return base.Channel.CalcPorbAsync(RR, agecat);
-        }
-        
-        public double CalculateProbability(double a, double tau, double r1, double r2) {
-            return base.Channel.CalculateProbability(a, tau, r1, r2);
-        }
-        
-        public System.Threading.Tasks.Task<double> CalculateProbabilityAsync(double a, double tau, double r1, double r2) {
-            return base.Channel.CalculateProbabilityAsync(a, tau, r1, r2);
-        }
-        
-        public double CalculateRelativeRisk(int agecat, int agemen, int ageflb, int nbiops, int numrel, int ah) {
-            return base.Channel.CalculateRelativeRisk(agecat, agemen, ageflb, nbiops, numrel, ah);
-        }
-        
-        public System.Threading.Tasks.Task<double> CalculateRelativeRiskAsync(int agecat, int agemen, int ageflb, int nbiops, int numrel, int ah) {
-            return base.Channel.CalculateRelativeRiskAsync(agecat, agemen, ageflb, nbiops, numrel, ah);
+        public System.Threading.Tasks.Task<double> CalculateProbabilityAsync(double a, double r1, double r2) {
+            return base.Channel.CalculateProbabilityAsync(a, r1, r2);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WebApplicationGail.GailService.ReadFormResponse WebApplicationGail.GailService.GailModelSoap.ReadForm(WebApplicationGail.GailService.ReadFormRequest request) {
-            return base.Channel.ReadForm(request);
+        WebApplicationGail.GailService.CalculateRRResponse WebApplicationGail.GailService.GailModelSoap.CalculateRR(WebApplicationGail.GailService.CalculateRRRequest request) {
+            return base.Channel.CalculateRR(request);
         }
         
-        public double ReadForm(string agecat, string agemen, string ageflb, string nbiops, string numrel, string ah) {
-            WebApplicationGail.GailService.ReadFormRequest inValue = new WebApplicationGail.GailService.ReadFormRequest();
-            inValue.Body = new WebApplicationGail.GailService.ReadFormRequestBody();
+        public double CalculateRR(string agecat, string agemen, string ageflb, string nbiops, string numrel, string ah) {
+            WebApplicationGail.GailService.CalculateRRRequest inValue = new WebApplicationGail.GailService.CalculateRRRequest();
+            inValue.Body = new WebApplicationGail.GailService.CalculateRRRequestBody();
             inValue.Body.agecat = agecat;
             inValue.Body.agemen = agemen;
             inValue.Body.ageflb = ageflb;
             inValue.Body.nbiops = nbiops;
             inValue.Body.numrel = numrel;
             inValue.Body.ah = ah;
-            WebApplicationGail.GailService.ReadFormResponse retVal = ((WebApplicationGail.GailService.GailModelSoap)(this)).ReadForm(inValue);
-            return retVal.Body.ReadFormResult;
+            WebApplicationGail.GailService.CalculateRRResponse retVal = ((WebApplicationGail.GailService.GailModelSoap)(this)).CalculateRR(inValue);
+            return retVal.Body.CalculateRRResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WebApplicationGail.GailService.ReadFormResponse> WebApplicationGail.GailService.GailModelSoap.ReadFormAsync(WebApplicationGail.GailService.ReadFormRequest request) {
-            return base.Channel.ReadFormAsync(request);
+        System.Threading.Tasks.Task<WebApplicationGail.GailService.CalculateRRResponse> WebApplicationGail.GailService.GailModelSoap.CalculateRRAsync(WebApplicationGail.GailService.CalculateRRRequest request) {
+            return base.Channel.CalculateRRAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WebApplicationGail.GailService.ReadFormResponse> ReadFormAsync(string agecat, string agemen, string ageflb, string nbiops, string numrel, string ah) {
-            WebApplicationGail.GailService.ReadFormRequest inValue = new WebApplicationGail.GailService.ReadFormRequest();
-            inValue.Body = new WebApplicationGail.GailService.ReadFormRequestBody();
+        public System.Threading.Tasks.Task<WebApplicationGail.GailService.CalculateRRResponse> CalculateRRAsync(string agecat, string agemen, string ageflb, string nbiops, string numrel, string ah) {
+            WebApplicationGail.GailService.CalculateRRRequest inValue = new WebApplicationGail.GailService.CalculateRRRequest();
+            inValue.Body = new WebApplicationGail.GailService.CalculateRRRequestBody();
             inValue.Body.agecat = agecat;
             inValue.Body.agemen = agemen;
             inValue.Body.ageflb = ageflb;
             inValue.Body.nbiops = nbiops;
             inValue.Body.numrel = numrel;
             inValue.Body.ah = ah;
-            return ((WebApplicationGail.GailService.GailModelSoap)(this)).ReadFormAsync(inValue);
+            return ((WebApplicationGail.GailService.GailModelSoap)(this)).CalculateRRAsync(inValue);
         }
     }
 }
