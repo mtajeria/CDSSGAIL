@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://cdssgailmodel.com/webservice" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://cdssgailmodel.com/webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cdssgailmodel.com/webservice">
+      <s:element name="CalcPorb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RR" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="agecat" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcPorbResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalcPorbResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateProbability">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="a" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="tau" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="r1" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="r2" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateProbabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateProbabilityResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRelativeRisk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="agecat" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="agemen" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ageflb" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nbiops" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numrel" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ah" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRelativeRiskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateRelativeRiskResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadForm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agecat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="agemen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ageflb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nbiops" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numrel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ah" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReadFormResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalcPorbSoapIn">
+    <wsdl:part name="parameters" element="tns:CalcPorb" />
+  </wsdl:message>
+  <wsdl:message name="CalcPorbSoapOut">
+    <wsdl:part name="parameters" element="tns:CalcPorbResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateProbabilitySoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateProbability" />
+  </wsdl:message>
+  <wsdl:message name="CalculateProbabilitySoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateProbabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRelativeRiskSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateRelativeRisk" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRelativeRiskSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateRelativeRiskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadFormSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadForm" />
+  </wsdl:message>
+  <wsdl:message name="ReadFormSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadFormResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GailModelSoap">
+    <wsdl:operation name="CalcPorb">
+      <wsdl:input message="tns:CalcPorbSoapIn" />
+      <wsdl:output message="tns:CalcPorbSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateProbability">
+      <wsdl:input message="tns:CalculateProbabilitySoapIn" />
+      <wsdl:output message="tns:CalculateProbabilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRelativeRisk">
+      <wsdl:input message="tns:CalculateRelativeRiskSoapIn" />
+      <wsdl:output message="tns:CalculateRelativeRiskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadForm">
+      <wsdl:input message="tns:ReadFormSoapIn" />
+      <wsdl:output message="tns:ReadFormSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GailModelSoap" type="tns:GailModelSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalcPorb">
+      <soap:operation soapAction="http://cdssgailmodel.com/webservice/CalcPorb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateProbability">
+      <soap:operation soapAction="http://cdssgailmodel.com/webservice/CalculateProbability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRelativeRisk">
+      <soap:operation soapAction="http://cdssgailmodel.com/webservice/CalculateRelativeRisk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadForm">
+      <soap:operation soapAction="http://cdssgailmodel.com/webservice/ReadForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GailModelSoap12" type="tns:GailModelSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalcPorb">
+      <soap12:operation soapAction="http://cdssgailmodel.com/webservice/CalcPorb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateProbability">
+      <soap12:operation soapAction="http://cdssgailmodel.com/webservice/CalculateProbability" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRelativeRisk">
+      <soap12:operation soapAction="http://cdssgailmodel.com/webservice/CalculateRelativeRisk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadForm">
+      <soap12:operation soapAction="http://cdssgailmodel.com/webservice/ReadForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GailModel">
+    <wsdl:port name="GailModelSoap" binding="tns:GailModelSoap">
+      <soap:address location="http://localhost:53767/GailModel.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GailModelSoap12" binding="tns:GailModelSoap12">
+      <soap12:address location="http://localhost:53767/GailModel.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

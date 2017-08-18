@@ -1,0 +1,6 @@
+C:\Users\Taje\Desktop\Proyecto Final\WebService\WebServiceGail\WebApplicationGail\obj\Debug\WebApplicationGail.csprojResolveAssemblyReference.cache
+C:\Users\Taje\Desktop\Proyecto Final\WebService\WebServiceGail\WebApplicationGail\bin\WebApplicationGail.dll.config
+C:\Users\Taje\Desktop\Proyecto Final\WebService\WebServiceGail\WebApplicationGail\bin\WebApplicationGail.dll
+C:\Users\Taje\Desktop\Proyecto Final\WebService\WebServiceGail\WebApplicationGail\bin\WebApplicationGail.pdb
+C:\Users\Taje\Desktop\Proyecto Final\WebService\WebServiceGail\WebApplicationGail\obj\Debug\WebApplicationGail.dll
+C:\Users\Taje\Desktop\Proyecto Final\WebService\WebServiceGail\WebApplicationGail\obj\Debug\WebApplicationGail.pdb
